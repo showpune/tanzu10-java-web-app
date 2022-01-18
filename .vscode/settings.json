@@ -1,0 +1,4 @@
+{
+    "tanzu.sourceImage": "index.docker.io/showpune/tanzu10-java-web-app-business-development",
+    "tanzu.namespace": "business-development"
+}
