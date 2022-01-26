@@ -1,5 +1,10 @@
+update_settings ( max_parallel_updates = 3 , k8s_upsert_timeout_secs = 120 , suppress_unused_image_warnings = None ) 
 allow_k8s_contexts('debug-performance-test-admin')
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='index.docker.io/showpune/tanzu10-java-web-app-business-development')
+<<<<<<< HEAD
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='index.docker.io/showpune/tanzu10-java-web-app-source')
+=======
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='tanzucontainer.azurecr.io/tanzu10-source')
+>>>>>>> 6fb4c70aa1e8a4323c571e7140278f21c466ced4
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='business-development')
 

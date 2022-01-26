@@ -1,0 +1,45 @@
+profile: light
+ceip_policy_disclosed: true # Installation fails if this is set to 'false'
+buildservice:
+  kp_default_repository: "index.docker.io/showpune/build-service"
+  kp_default_repository_username: "showpune"
+  kp_default_repository_password: "Nuonuo8815"
+  tanzunet_username: "iamlizhiyong@outlook.com"
+  tanzunet_password: "Nuonuo-8815"
+
+supply_chain: basic
+
+ootb_supply_chain_basic:
+  registry:
+    server: "index.docker.io"
+    repository: "showpune"
+  gitops:
+    ssh_secret: ""
+    
+contour:
+  envoy:
+    service:
+      type: LoadBalancer
+
+tap_gui:
+  service_type: LoadBalancer # NodePort for distributions that don't support LoadBalancer
+  ingressEnabled: "true"
+  ingressDomain: "asc-test.net"
+  app_config:
+    app:
+      baseUrl: http://tap10.asc-test.net:7000
+    integrations:
+      github: # Other integrations available see NOTE below
+        - host: github.com
+          token: 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
+    catalog:
+      locations:
+        - type: url
+          target: https://raw.githubusercontent.com/showpune/tanzu10-java-web-app/master/catalog-info.yaml
+    backend:
+      baseUrl: http://tap10.asc-test.net:7000
+      cors:
+        origin: http://tap10.asc-test.net:7000
+
+metadata_store:
+  app_service_type: LoadBalancer # (optional) Defaults to LoadBalancer. Change to NodePort for distributions that don't support LoadBalancer

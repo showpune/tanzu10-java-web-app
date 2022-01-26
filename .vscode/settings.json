@@ -1,4 +1,5 @@
 {
-    "tanzu.sourceImage": "index.docker.io/showpune/tanzu10-java-web-app-business-development",
-    "tanzu.namespace": "business-development"
+    "tanzu.sourceImage": "index.docker.io/showpune/tanzu10-java-web-app-source",
+    "tanzu.namespace": "business-development",
+    "java.server.launchMode": "Standard"
 }
