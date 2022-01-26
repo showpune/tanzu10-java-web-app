@@ -1,5 +1,5 @@
 allow_k8s_contexts('debug-performance-test-admin')
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='index.docker.io/showpune/tanzu10-java-web-app-business-development')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='index.docker.io/showpune/tanzu10-java-web-app-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='business-development')
 
