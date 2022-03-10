@@ -1,5 +1,7 @@
 {
     "tanzu.sourceImage": "index.docker.io/showpune/tanzu10-java-web-app-source",
     "tanzu.namespace": "business-development",
-    "java.server.launchMode": "Standard"
+    "java.server.launchMode": "Standard",
+    "java.dependency.syncWithFolderExplorer": false,
+    "java.dependency.packagePresentation": "hierarchical"
 }
