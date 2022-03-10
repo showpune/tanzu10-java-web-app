@@ -1,0 +1,5 @@
+tanzu apps workload apply -f config/workload.yaml --live-update --local-path . --source-image index.docker.io/showpune/tanzu10-java-web-app-source --namespace business-development --yes
+
+
+kc config set-context --current --namespace=business-development
+tanzu apps workload tail tanzu10-java-web-app --since 10m --timestamp
