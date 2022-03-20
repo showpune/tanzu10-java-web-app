@@ -1,3 +1,6 @@
 kubectl port-forward service/envoy 8888:80 -n tanzu-system-ingress
 
 curl http://localhost:8888 -Headers @{"Host"="tanzu10-java-web-app.business-development.example.com"}
+
+
+curl 20.85.206.15 -Headers @{"Host"="tanzu10-java-web-app.business-development.example.com"}
