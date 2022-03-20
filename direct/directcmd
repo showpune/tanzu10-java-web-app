@@ -7,3 +7,6 @@ tanzu apps workload apply -f config/workload.yaml --namespace business-developme
 
 
 tanzu apps workload tail tanzu10-java-web-app --since 10m --timestamp
+
+
+tanzu package install tap-gui --package-name tap-gui.tanzu.vmware.com --version 1.0.0 -n tap-install  -f ./deployment/tap-values.yaml
