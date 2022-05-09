@@ -3,5 +3,7 @@
     "tanzu.namespace": "business-development",
     "java.server.launchMode": "Standard",
     "java.dependency.syncWithFolderExplorer": false,
-    "java.dependency.packagePresentation": "hierarchical"
+    "java.dependency.packagePresentation": "hierarchical",
+    "maven.view": "hierarchical",
+    "extensions.ignoreRecommendations": true
 }

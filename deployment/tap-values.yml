@@ -19,7 +19,7 @@ ootb_supply_chain_basic:
 contour:
   envoy:
     service:
-      type: NodePort 
+      type: LoadBalancer 
 
 tap_gui:
   service_type: LoadBalancer # NodePort for distributions that don't support LoadBalancer
@@ -31,11 +31,11 @@ tap_gui:
     integrations:
       github: # Other are integrations available
         - host: github.com
-          token: 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
+          token: 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
     catalog:
       locations:
         - type: url
-          target: https://raw.githubusercontent.com/showpune/tanzu10-java-web-app/master/catalog-info.yaml
+          target: https://github.com/showpune/tanzu10-java-web-app/blob/master/catalog-info.yaml
     backend:
       baseUrl: http://atap10.asc-test.net:7000
       cors:
