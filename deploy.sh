@@ -36,3 +36,6 @@ az spring-cloud app create --name ${APP_NAME} --instance-count 1 --is-public tru
 # ==== Deploy apps ====
 
 az spring-cloud app deploy --name ${APP_NAME} --artifact-path ${APPLICATION_JAR} --service ${SPRING_CLOUD_SERVICE} --resource-group ${RESOURCE_GROUP} --verbose
+
+az spring-cloud app deployment create --app ${APP_NAME} --name test --artifact-path ${APPLICATION_JAR} --builder java-builder
+                                  
