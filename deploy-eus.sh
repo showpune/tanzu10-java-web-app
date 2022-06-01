@@ -12,15 +12,14 @@ az cloud set -n AzureCloud
 az login
 az account set -s "Azure Spring Cloud Dogfood Test v3 - TTL = 1 Days"
 
-
-
-# ==== Create Resource Group ====
-az group create --name ${RESOURCE_GROUP} --location ${REGION}
-
 az configure --defaults \
     group=${RESOURCE_GROUP} \
     location=${REGION} \
     spring-cloud=${SPRING_CLOUD_SERVICE}
+
+# ==== Create Resource Group ====
+#az group create --name ${RESOURCE_GROUP} --location ${REGION}
+
 
 # ==== Create Azure Spring Cloud ====
 az spring-cloud create --name ${SPRING_CLOUD_SERVICE} \
@@ -35,4 +34,4 @@ mvn clean package -DskipTests -Denv=cloud
 
 # ==== Deploy apps ====
 
-az spring-cloud app deploy --name ${APP_NAME} --jar-path ${APPLICATION_JAR} --service ${SPRING_CLOUD_SERVICE} --resource-group ${RESOURCE_GROUP}
+az spring-cloud app deploy --name ${APP_NAME} --source-path . --service ${SPRING_CLOUD_SERVICE} --resource-group ${RESOURCE_GROUP} --build-env=BP_NATIVE_IMAGE=true
