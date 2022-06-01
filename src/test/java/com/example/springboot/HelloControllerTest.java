@@ -1,31 +1,16 @@
-package com.example.springboot;
+package com.example.helloworld;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.web.servlet.MockMvc;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class HelloworldApplicationTests {
 
-@WebMvcTest(HelloController.class)
-class HelloControllerTest {
+	@Test
+	public void contextLoads() {
+	}
 
-    @Autowired
-    private HelloController controller;
-
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Test
-    void index() throws Exception {
-        assertEquals("Greetings from Spring Boot + Tanzu!", controller.index());
-
-        mockMvc
-            .perform(get("/"))
-            .andExpect(status().isOk())
-            .andExpect(content().string("Greetings from Spring Boot + Tanzu!"));
-    }
 }
