@@ -3,7 +3,7 @@
 # ==== Resource Group ====
 export RESOURCE_GROUP=zhiyongli
 export REGION=eastus
-export SPRING_CLOUD_SERVICE=zhiyongli-asc-s
+export SPRING_CLOUD_SERVICE=zhiyongli-asc-e
 export APP_NAME=tanzu10
 # ==== JARS ====
 export APPLICATION_JAR="target/demo-0.0.1-SNAPSHOT.jar"
@@ -34,4 +34,4 @@ mvn clean package -DskipTests -Denv=cloud
 
 # ==== Deploy apps ====
 
-az spring-cloud app deploy --name ${APP_NAME} --source-path . --service ${SPRING_CLOUD_SERVICE} --resource-group ${RESOURCE_GROUP} --build-env=BP_NATIVE_IMAGE=true
+az spring-cloud app deploy --name ${APP_NAME} --artifact-path ${APPLICATION_JAR} --service ${SPRING_CLOUD_SERVICE} --resource-group ${RESOURCE_GROUP} --build-env=BP_NATIVE_IMAGE=true --verbose
